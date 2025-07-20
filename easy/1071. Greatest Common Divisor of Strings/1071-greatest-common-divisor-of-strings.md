@@ -6,6 +6,14 @@ For two strings `s` and `t`, we say "`t` divides `s`" if and only if `s = t + t 
 
 Given two strings `str1` and `str2`, return the largest string `x` such that `x` divides both `str1` and `str2`.
 
+### Core Requirements
+
+1. **Find common divisor** - String that divides both input strings
+2. **Largest divisor** - Return the longest possible common divisor string
+3. **String division concept** - A string divides another if concatenated copies form the target
+4. **Handle no solution** - Return empty string if no common divisor exists
+5. **Validate division** - Ensure candidate actually divides both strings completely
+
 ## Examples
 
 ### Example 1:

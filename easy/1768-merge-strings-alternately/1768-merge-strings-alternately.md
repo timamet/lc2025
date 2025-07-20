@@ -3,6 +3,14 @@
 ## Problem Statement
 You are given two strings `word1` and `word2`. Merge the strings by adding letters in alternating order, starting with `word1`. If a string is longer than the other, append the additional letters onto the end of the merged string.
 
+### Core Requirements
+
+1. **Alternating merge** - Take characters from word1 and word2 in alternating order
+2. **Start with word1** - First character should always come from word1
+3. **Handle different lengths** - Append remaining characters from longer string
+4. **Preserve order** - Maintain original character order within each string
+5. **Complete merge** - Include all characters from both input strings
+
 ## Examples
 
 ### Example 1:
