@@ -14,31 +14,25 @@ class Solution:
         return nextGroupIndex + 1
     
     def compress(self, chars: List[str]) -> int:
-        print(chars)
+        n = len(chars)
 
-        charSize = len(chars)
-
-        if charSize == 1: 
-            return 1
+        if n <= 1: 
+            return n
         
-        groupSize = 0
-
         left, right = 0,0
-        nextGroupIndex = 0
-        while right < charSize:
+        write_pos = 0
+
+        while right < n:
             if chars[left] == chars[right]:
-                groupSize += 1
                 right += 1
-            
             else:
-                nextGroupIndex = self.updateOutputAndReturnNextGroupIndex(chars, left, nextGroupIndex, groupSize) 
-                groupSize = 0
+                count = right - left
+                write_pos = self.updateOutputAndReturnNextGroupIndex(chars, left, write_pos, count) 
                 left = right
 
-        nextGroupIndex = self.updateOutputAndReturnNextGroupIndex(chars, left, nextGroupIndex, groupSize)
-        print(chars)
-
-        return nextGroupIndex
+        count = right - left
+        write_pos = self.updateOutputAndReturnNextGroupIndex(chars, left, write_pos, count)
+        return write_pos
 
 
 #Solution().compress(['a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','b','b','b'])
